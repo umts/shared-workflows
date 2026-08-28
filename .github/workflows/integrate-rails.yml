@@ -7,12 +7,15 @@ jobs:
   docker:
     name: rails
     uses: ./.github/workflows/docker.yml
-  eslint:
-    name: rails
-    uses: ./.github/workflows/eslint.yml
   haml-lint:
     name: rails
     uses: ./.github/workflows/haml-lint.yml
+  oxfmt:
+    name: rails
+    uses: ./.github/workflows/oxfmt.yml
+  oxlint:
+    name: rails
+    uses: ./.github/workflows/oxlint.yml
   rspec:
     name: rails
     uses: ./.github/workflows/rspec-rails.yml
