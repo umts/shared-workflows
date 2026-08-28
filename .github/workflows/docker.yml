@@ -5,8 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - run: |
-          BUILD_ARGS=""
-          [ -f .node-version ] && BUILD_ARGS="$BUILD_ARGS --build-arg NODE_VERSION=$(cat .node-version)"
-          [ -f .ruby-version ] && BUILD_ARGS="$BUILD_ARGS --build-arg RUBY_VERSION=$(cat .ruby-version)"
-          docker build --tag ${{ github.event.repository.name }} $BUILD_ARGS .
+      - run: docker build .
