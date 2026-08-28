@@ -1,0 +1,18 @@
+on:
+  workflow_call:
+jobs:
+  oxfmt:
+    name: vite
+    uses: ./.github/workflows/oxfmt.yml
+  oxlint:
+    name: vite
+    uses: ./.github/workflows/oxlint.yml
+  stylelint:
+    name: vite
+    uses: ./.github/workflows/stylelint.yml
+  vite:
+    name: vite
+    uses: ./.github/workflows/vite.yml
+  vitest:
+    name: vite
+    uses: ./.github/workflows/vitest.yml
