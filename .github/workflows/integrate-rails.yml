@@ -1,0 +1,24 @@
+on:
+  workflow_call:
+jobs:
+  brakeman:
+    name: rails
+    uses: ./.github/workflows/brakeman.yml
+  docker:
+    name: rails
+    uses: ./.github/workflows/docker.yml
+  eslint:
+    name: rails
+    uses: ./.github/workflows/eslint.yml
+  haml-lint:
+    name: rails
+    uses: ./.github/workflows/haml-lint.yml
+  rspec:
+    name: rails
+    uses: ./.github/workflows/rspec-rails.yml
+  rubocop:
+    name: rails
+    uses: ./.github/workflows/rubocop.yml
+  stylelint:
+    name: rails
+    uses: ./.github/workflows/stylelint.yml

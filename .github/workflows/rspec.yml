@@ -1,0 +1,30 @@
+on:
+  workflow_call:
+    inputs:
+      node:
+        type: boolean
+        required: false
+        default: false
+      setup_command:
+        type: string
+        required: false
+jobs:
+  rspec:
+    runs-on: ubuntu-latest
+    env:
+      RACK_ENV: test
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - if: ${{ inputs.node }}
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - if: ${{ inputs.node }}
+        run: npm ci
+      - if: ${{ inputs.setup_command != '' }}
+        run: ${{ inputs.setup_command }}
+      - run: bundle exec rspec
