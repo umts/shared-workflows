@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     services:
       mysql:
-        image: mysql:8.0
+        image: mariadb:10.6
         env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: 1
+          MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 1
         ports:
           - 3306:3306
     env:
