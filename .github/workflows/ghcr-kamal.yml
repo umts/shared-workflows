@@ -1,5 +1,8 @@
 on:
   workflow_call:
+concurrency:
+  group: ghcr
+  cancel-in-progress: true
 jobs:
   ghcr:
     runs-on: ubuntu-latest
