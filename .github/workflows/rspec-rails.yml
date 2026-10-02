@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       mysql:
-        image: mariadb:10.6@sha256:40153feb479c0da88b5cfe3f50f44c91f7baf05a1b7bcc5beb7eb37a890a8f16
+        image: mariadb:10.6@sha256:23616f0bd3aff922f4dea4130f1d0a09f3571d20b7b36c8f49840672dc309e8c
         env:
           MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 1
         ports:
